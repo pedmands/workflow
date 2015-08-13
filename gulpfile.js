@@ -14,7 +14,7 @@ var jsSources = [
 ]		
 
 var sassSources = [
-	'components/sass/style.scss'
+	'components/sass/*.scss'
 ]
 
 gulp.task('coffee', function() {
@@ -45,3 +45,8 @@ gulp.task('compass', function(){
 });
 
 gulp.task('default', ['coffee', 'js', 'compass']);
+
+gulp.task('watch', function(){
+	gulp.watch(jsSources, ['js']);
+	gulp.watch(sassSources, ['compass']);
+});
